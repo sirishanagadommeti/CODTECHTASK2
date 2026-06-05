@@ -63,3 +63,19 @@ CALCULATE(
 ``
 
 
+Most Ordered Product =
+TOPN(
+    1,
+    VALUES(Product[Product Name]),
+    [Orders],
+    DESC
+)
+
+Most Returned Product =
+TOPN(
+    1,
+    VALUES(Product[Product Name]),
+    [Return %],
+    DESC
+)
+
