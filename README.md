@@ -27,3 +27,10 @@ DATE(
     RIGHT(Sales[Order Date Key],2)
 )
 
+
+Order Date =
+DATE(
+    VALUE(LEFT(FORMAT(Sales[Order Date Key], "00000000"), 4)),
+    VALUE(MID(FORMAT(Sales[Order Date Key], "00000000"), 5, 2)),
+    VALUE(RIGHT(FORMAT(Sales[Order Date Key], "00000000"), 2))
+)
