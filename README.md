@@ -34,3 +34,11 @@ DATE(
     VALUE(MID(FORMAT(Sales[Order Date Key], "00000000"), 5, 2)),
     VALUE(RIGHT(FORMAT(Sales[Order Date Key], "00000000"), 2))
 )
+
+Order Date =
+DATE(
+    INT(Sales[Order Date Key] / 10000),
+    INT(MOD(Sales[Order Date Key] / 100, 100)),
+    MOD(Sales[Order Date Key], 100)
+)
+
