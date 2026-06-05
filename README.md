@@ -41,4 +41,25 @@ DATE(
     INT(MOD(Sales[Order Date Key] / 100, 100)),
     MOD(Sales[Order Date Key], 100)
 )
+onthly Revenue = CALCULATE([Total Revenue], MONTH(Sales[Date]) = MONTH(TODAY()))
+
+Monthly Revenue =
+CALCULATE(
+    [Total Revenue],
+    MONTH(Sales[Date]) = MONTH(TODAY())
+)
+
+Monthly Orders =
+CALCULATE(
+    [Orders],
+    MONTH(Sales[Date]) = MONTH(TODAY())
+)
+
+Monthly Return % =
+CALCULATE(
+    [Return %],
+    MONTH(Sales[Date]) = MONTH(TODAY())
+)
+``
+
 
